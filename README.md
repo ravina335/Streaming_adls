@@ -1,4 +1,3 @@
-
 # 📊 Real-Time Data Streaming & Analytics Pipeline using Azure & Databricks
 
 This project implements an **end-to-end streaming data pipeline** using **Azure services** such as Data Lake Storage, Databricks, and Synapse Serverless SQL. It reads simulated streaming data, cleans it using PySpark, stores it in Delta format, and registers the output as an external table for SQL querying via Synapse.
@@ -6,9 +5,6 @@ This project implements an **end-to-end streaming data pipeline** using **Azure 
 ---
 
 ## 🚀 Project Flow
-
-```mermaid
-graph TD
     A[Simulate CSV Stream with Python Script] --> B[Upload to Azure Data Lake (ADLS Gen2)]
     B --> C[Ingest & Clean in Azure Databricks (Streaming + PySpark)]
     C --> D[Write Clean Data to ADLS as Delta Format]
