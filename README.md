@@ -17,11 +17,11 @@ This project implements an **end-to-end streaming data pipeline** using **Azure 
 
 ```
 Streaming_adls/
-│   ├── csv to adls.ipynb        # Python script to simulate streaming CSV uploads    
-│   ├── Createview_query.sql   # SQL view for cleaned data
-│   ├── streaming_adls.ipynb # Databricks notebook: autoloader + cleaning + Delta write
-|   ├── README.md
-```
+│
+├── csv_to_adls.ipynb           # Python script to simulate streaming CSV uploads to ADLS    
+├── create_view_query.sql       # SQL script to create external view in Synapse Serverless
+├── streaming_adls.ipynb        # Databricks notebook: Autoloader + data cleaning + Delta write
+├── README.md                   # Project overview, setup, and usage instructions
 
 ---
 
