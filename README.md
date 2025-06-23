@@ -12,8 +12,7 @@ graph TD
     A[Simulate CSV Stream with Python Script] --> B[Upload to Azure Data Lake (ADLS Gen2)]
     B --> C[Ingest & Clean in Azure Databricks (Streaming + PySpark)]
     C --> D[Write Clean Data to ADLS as Delta Format]
-    D --> E[Register External Table in Synapse Serverless SQL]
-    E --> F[Create Synapse SQL View for Reporting]
+    D --> E[Create Synapse SQL View for Reporting]
 ```
 
 ---
@@ -22,13 +21,10 @@ graph TD
 
 ```
 Streaming_adls/
-├── scripts/
-│   ├── upload_csv_simulator.py         # Python script to simulate streaming CSV uploads
-│   ├── create_external_table.sql       # SQL to register external table
-│   ├── create_view_cleaned_data.sql    # SQL view for cleaned Delta data
-├── notebooks/
-│   ├── databricks_ingestion_cleaning.ipynb # Databricks notebook: autoloader + cleaning + Delta write
-├── README.md
+│   ├── csv to adls.ipynb        # Python script to simulate streaming CSV uploads    
+│   ├── Createview_query.sql   # SQL view for cleaned data
+│   ├── streaming_adls.ipynb # Databricks notebook: autoloader + cleaning + Delta write
+|   ├── README.md
 ```
 
 ---
@@ -80,22 +76,16 @@ Via Synapse Serverless SQL Pool.
 ## 📚 How to Run
 
 ### 1. Simulate Stream Data
-
-```bash
-python scripts/upload_csv_simulator.py
+ scripts  'csv to adls_dbr.ipynb'
 ```
 
 ### 2. Ingest + Clean in Databricks
 
-- Use the provided notebook in Databricks workspace: `databricks_ingestion_cleaning.ipynb`
+- Use the provided notebook in Databricks workspace: `streaming_adls.ipynb`
 
-### 3. Register External Table in Synapse
+### 3. Create SQL View in Synapse
 
-Run `scripts/create_external_table.sql` inside Synapse Studio.
-
-### 4. Create SQL View in Synapse
-
-Run `scripts/create_view_cleaned_data.sql` inside Synapse Studio.
+Run `Createview_query.sql` inside Synapse Studio.
 
 ---
 
@@ -106,7 +96,3 @@ MSc Data Science Student
 GitHub: [@ravina335](https://github.com/ravina335)
 
 ---
-
-## 📌 License
-
-This project is released under the [MIT License](LICENSE).
